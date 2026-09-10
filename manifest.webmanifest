@@ -1,0 +1,11 @@
+{
+  "name": "Kinematika — koncept sketcher",
+  "short_name": "Kinematika",
+  "description": "Mobilní freehand sketcher mechanické kinematiky",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1419",
+  "theme_color": "#0f1419",
+  "orientation": "any",
+  "lang": "cs"
+}
