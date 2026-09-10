@@ -297,12 +297,13 @@ function togglePlay(): void {
     return;
   }
   const dur = doc.playback?.durationSec ?? 4;
-  // Probe solvability
+  // Probe solvability — abort before entering play if unsolvable
   const probe = solveAtTime(doc, 0);
-  if (!probe.ok && probe.message) {
-    toast.show(probe.message);
+  if (!probe.ok) {
+    if (probe.message) toast.show(probe.message);
     if (probe.badJoints) badJoints = new Set(probe.badJoints);
     draw();
+    return;
   }
   playing = true;
   playStart = performance.now();
